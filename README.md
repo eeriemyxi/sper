@@ -5,7 +5,7 @@
 A simple C program that can generate and save license files from templates.
 
 # Usage
-> ![IMPORTANT]
+> [!IMPORTANT]
 > You have to set `SPER_LICENSE_DIR` environment variable to Sper
 > where to find templates.
 ```
