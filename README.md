@@ -56,4 +56,4 @@ Usage: sper [file]
 note : [file] will be searched in '/home/myxi/Documents/licenses'
 ```
 > [!NOTE]
-> The path in the "note" is fetched from `$SPER_LICENSE_DIR`.
+> The path in the _note_ is fetched from `$SPER_LICENSE_DIR`.
