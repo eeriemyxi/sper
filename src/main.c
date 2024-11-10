@@ -99,7 +99,12 @@ char peek_file(struct File *file, int cur, int k) { return file->content[cur + k
 char *ask(int size) {
     char *value = malloc(size * sizeof(char));
 
-    fgets(value, size, stdin);
+    char *val = fgets(value, size, stdin);
+    if (val == NULL) {
+        fprintf(stderr, "ERROR: couldn't get input\n");
+        exit(EXIT_FAILURE);
+    }
+
     value = trim_whitespace(value);
     return value;
 }
@@ -204,7 +209,7 @@ void process_file(struct File *file, char *file_path) {
 
 void show_help(FILE *file, char *program, char *license_dir) {
     fprintf(file, "Usage: %s [-h] [file]\n", program);
-    fprintf(file, "help: -h will show this message\n", license_dir);
+    fprintf(file, "help: -h will show this message\n");
     fprintf(file, "note: [file] will be searched in '%s'\n", license_dir);
 }
 
@@ -224,7 +229,7 @@ int main(int argc, char *argv[]) {
 
     if (strcmp(argv[1], "-h") == 0) {
         show_help(stdout, argv[0], license_dir);
-        exit(EXIT_FAILURE);
+        exit(EXIT_SUCCESS);
     };
 
     char file_path[2000] = {0};
