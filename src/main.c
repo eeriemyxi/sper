@@ -94,10 +94,8 @@ char *trim_whitespace(char *str) {
 
     return str;
 }
-char peek_file(struct File *file, int cur, int k) {
-    if (file->content[cur + k] == '\0') return '\0';
-    return file->content[cur + k];
-}
+
+char peek_file(struct File *file, int cur, int k) { return file->content[cur + k]; }
 
 char *ask(int size) {
     char *value = malloc(size * sizeof(char));
