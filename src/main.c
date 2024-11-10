@@ -115,12 +115,16 @@ void process_file(struct File *file, char *file_path) {
     printf("INFO: processsing file '%s'\n", file_path);
     char *processed_file = malloc(file->size * sizeof(char) * 2);
     int pi = 0;
+    int line_count = 1;
 
     for (unsigned int i = 0; i < file->size; i++) {
         char c = peek_file(file, i, 0);
         processed_file[pi] = c;
         pi++;
 
+        if (c == '\n') {
+            line_count++;
+        }
         if (c != '<') continue;
         if (peek_file(file, i, 1) != '@') continue;
         i += 2;
@@ -132,11 +136,14 @@ void process_file(struct File *file, char *file_path) {
             c = peek_file(file, i, 0);
 
             if (c == '\0') {
-                fprintf(stderr, "ERROR: reached EOF while parsing.\n");
+                fprintf(stderr, "ERROR: reached EOF while parsing (from line %d).\n",
+                        line_count);
                 exit(EXIT_FAILURE);
             }
             if (c == '<') {
-                fprintf(stderr, "ERROR: Unterminated format specifier in the file.\n");
+                fprintf(stderr,
+                        "ERROR: Unterminated format specifier in the file (line %d).\n",
+                        line_count);
                 exit(EXIT_FAILURE);
             }
             if (c == '>') break;
