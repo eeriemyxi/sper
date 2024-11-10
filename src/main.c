@@ -143,7 +143,7 @@ void process_file(struct File *file, char *file_path) {
             }
             if (c == '<') {
                 fprintf(stderr,
-                        "ERROR: Unterminated format specifier in the file (line %d).\n",
+                        "ERROR: unterminated format specifier in the file (line %d).\n",
                         line_count);
                 exit(EXIT_FAILURE);
             }
@@ -197,7 +197,7 @@ void process_file(struct File *file, char *file_path) {
     fprintf(fp, "%s", processed_file);
     fclose(fp);
 
-    printf("INFO: Saved the file as '%s'\n", path);
+    printf("INFO: saved the file as '%s'\n", path);
 
     free(processed_file);
     free(path);
