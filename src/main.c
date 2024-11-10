@@ -203,8 +203,9 @@ void process_file(struct File *file, char *file_path) {
 }
 
 void show_help(FILE *file, char *program, char *license_dir) {
-    fprintf(file, "Usage: %s [file]\n", program);
-    fprintf(file, "note : [file] will be searched in '%s'\n", license_dir);
+    fprintf(file, "Usage: %s [-h] [file]\n", program);
+    fprintf(file, "help: -h will show this message\n", license_dir);
+    fprintf(file, "note: [file] will be searched in '%s'\n", license_dir);
 }
 
 int main(int argc, char *argv[]) {
