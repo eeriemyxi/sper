@@ -125,6 +125,7 @@ void process_file(struct File *file, char *file_path) {
         if (c == '\n') {
             line_count++;
         }
+
         if (c != '<') continue;
         if (peek_file(file, i, 1) != '@') continue;
         i += 2;
@@ -149,9 +150,9 @@ void process_file(struct File *file, char *file_path) {
             if (c == '>') break;
 
             key[j] = c;
-
             i++;
         }
+
         char extra[300] = {0};
         char year[300] = {0};
 
@@ -193,15 +194,15 @@ void process_file(struct File *file, char *file_path) {
         fprintf(stderr, "ERROR: can't write to file '%s'", path);
         exit(EXIT_FAILURE);
     }
-
     fprintf(fp, "%s", processed_file);
-
     fclose(fp);
+
     printf("INFO: Saved the file as '%s'\n", path);
 
     free(processed_file);
     free(path);
 }
+
 int main(int argc, char *argv[]) {
     char *license_dir = getenv("SPER_LICENSE_DIR");
 
