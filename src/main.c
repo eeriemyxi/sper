@@ -165,7 +165,7 @@ void process_file(struct File *file, char *file_path) {
             strcat(extra, str);
         }
 
-        printf(LIGHT_RED "❆ " LIGHT_BLUE BOLD "%s%s: " LIGHT_YELLOW, key, extra);
+        printf(LIGHT_RED "❆ " LIGHT_BLUE BOLD "%s%s: " LIGHT_YELLOW BOLD, key, extra);
         char *value = ask(1000);
         printf(RESET);
 
@@ -181,7 +181,7 @@ void process_file(struct File *file, char *file_path) {
     }
 
     printf(LIGHT_RED "❆ " LIGHT_BLUE BOLD "filename " RESET "(" LIGHT_CYAN
-                     "defaults to 'LICENSE'" RESET "): " LIGHT_YELLOW);
+                     "defaults to 'LICENSE'" RESET "): " LIGHT_YELLOW BOLD);
     char *path = ask(1000);
     if (strlen(path) == 0) {
         memset(path, 0, 1000);
