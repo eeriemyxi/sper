@@ -10,32 +10,32 @@ Set Height 720
 Env SPER_LICENSE_DIR "/home/myxi/Documents/licenses"
 
 Type "cat $SPER_LICENSE_DIR/MIT"
-Sleep 500ms
+Sleep 2s
 Enter
-Sleep 5s
+Sleep 3s
 
 Type "sper MIT"
-Sleep 500ms
+Sleep 2s
 Enter
-Sleep 5s
+Sleep 3s
 
 Type "2024"
-Sleep 500ms
+Sleep 2s
 Enter
-Sleep 5s
+Sleep 3s
 
 Type "myxi"
-Sleep 500ms
+Sleep 2s
 Enter
-Sleep 5s
+Sleep 3s
 
 Type "LICENSE"
-Sleep 500ms
+Sleep 2s
 Enter
-Sleep 5s
+Sleep 3s
 
 Type "cat LICENSE"
-Sleep 500ms
+Sleep 2s
 Enter
-Sleep 7s
+Sleep 5s
 

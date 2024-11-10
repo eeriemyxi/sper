@@ -1,6 +1,6 @@
 # Sper
 
-![](https://vhs.charm.sh/vhs-2lKuN8mn0tcSw36ziueJtX.gif)
+![](https://vhs.charm.sh/vhs-QTRwHDOwt7NidmflCzZcD.gif)
 
 A simple C program that can generate and save license files from templates.
 
