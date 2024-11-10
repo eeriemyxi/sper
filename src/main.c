@@ -117,7 +117,7 @@ void process_file(struct File *file, char *file_path) {
     int pi = 0;
 
     for (unsigned int i = 0; i < file->size; i++) {
-        char c = file->content[i];
+        char c = peek_file(file, i, 0);
         processed_file[pi] = c;
         pi++;
 
