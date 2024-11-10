@@ -202,6 +202,11 @@ void process_file(struct File *file, char *file_path) {
     free(path);
 }
 
+void show_help(FILE *file, char *program, char *license_dir) {
+    fprintf(file, "Usage: %s [file]\n", program);
+    fprintf(file, "note : [file] will be searched in '%s'\n", license_dir);
+}
+
 int main(int argc, char *argv[]) {
     char *license_dir = getenv("SPER_LICENSE_DIR");
 
@@ -211,10 +216,15 @@ int main(int argc, char *argv[]) {
     }
 
     if (argc == 1 || argc > 2) {
-        fprintf(stderr, "Usage: sper [file]\n");
-        fprintf(stderr, "note : [file] will be searched in '%s'\n", license_dir);
+        fprintf(stderr, "ERROR: too few/many arguments\n");
+        show_help(stderr, argv[0], license_dir);
         exit(EXIT_FAILURE);
     }
+
+    if (strcmp(argv[1], "-h") == 0) {
+        show_help(stdout, argv[0], license_dir);
+        exit(EXIT_FAILURE);
+    };
 
     char file_path[2000] = {0};
     strcat(file_path, license_dir);
