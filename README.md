@@ -52,8 +52,9 @@ INSTALL_DIR=/usr/local/bin RELEASE=1`
 
 # Command-Line Arguments
 ```
-Usage: sper [file]
-note : [file] will be searched in '/home/myxi/Documents/licenses'
+Usage: ./bin/sper [-h] [file]
+help: -h will show this message
+note: [file] will be searched in '/home/myxi/Documents/licenses'
 ```
 > [!NOTE]
 > The path in the _note_ is fetched from `$SPER_LICENSE_DIR`.
